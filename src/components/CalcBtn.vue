@@ -1,5 +1,9 @@
+<script setup> 
+var emit=defineEmits(['click']);
+</script>
+
 <template>
-    <button class="calc-btn">
+    <button class="calc-btn" @click="$emit('click')">
         Calculate GPA
     </button>
 </template>
