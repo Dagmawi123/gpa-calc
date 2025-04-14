@@ -1,15 +1,17 @@
+<script setup>
+import CoursesFile  from '../assets/courses.json';
+var courses=CoursesFile.courses;
+var grading=CoursesFile.grading_scale; 
+console.log(courses[0].credits);
+</script> 
 <template>
     <div class="course">
         <select class="course-input" name="" id="">
-            <option value="">Programming</option>
-            <option value="">DataStructures</option>
-            <option value="">Logic and Critical Thinking</option>
+            <option v-for="course in courses" value="course.credits">{{course.name}}</option> 
         </select>
    
         <select class="grade-select" name="" id="">
-            <option value="">A+</option>
-            <option value="">A</option>
-            <option value="">C+</option>
+            <option v-for="grade in grading" value="grade.point">{{ grade.grade }}</option> 
         </select>
         </div>
 </template>
