@@ -11,7 +11,7 @@ gpa.value=courseListRef.value?.calculateGPA();
 </script>
 <template>
   <div class="container">
-    <h2>GPA Calculator</h2>
+    <h2> <span>HiLCoE</span> GPA Calculator</h2>
     <main>
       <CoursesList ref="courseListRef" />
     </main>
@@ -27,6 +27,13 @@ gpa.value=courseListRef.value?.calculateGPA();
   font-size: 25px;
   font-weight: 800;
   font-family: 'Frutiger LT Std', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.container span{
+  color: #16376d;
+  /* blue-500 */
+  font-weight: 900;
+  font-size: 30px;
+  font-family: 'Cooper Black', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .display {

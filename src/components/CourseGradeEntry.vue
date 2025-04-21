@@ -1,17 +1,22 @@
 <script setup>
 import CoursesFile from '../assets/courses.json';
-import { ref, watch } from 'vue';
-var courses = CoursesFile.courses;
-var grading = CoursesFile.grading_scale;
+import { ref, watch } from 'vue'; 
+const courses = [...CoursesFile.courses]; // Create new array
+const grading_scale = [...CoursesFile.grading_scale]; // Create new array
+
 // console.log(courses[0].credits);
-const grade = ref(4);
-const credit = ref(5);
-const emit = defineEmits(['credit', 'grade']);
+const props = defineProps({
+  initialCredit: { type: Number, default: 5 },
+  initialGrade: { type: Number, default: 4 }
+});
+const grade = ref(props.initialGrade);
+const credit = ref(props.initialCredit);
+const emit = defineEmits(['creditChanged', 'gradeChanged']);
 watch(credit, (newValue) => {
-  emit('credit', newValue);
+  emit('creditChanged', newValue);
 })
 watch(grade, (newValue) => {
-  emit('grade', newValue);
+  emit('gradeChanged', newValue);
 })
 
 </script>
@@ -24,7 +29,7 @@ watch(grade, (newValue) => {
     </select>
 
     <select v-model="grade" class="grade-select" name="" id="">
-      <option v-for="grade in grading" :value="grade.point">{{ grade.grade }}</option>
+      <option v-for="gradeObj in grading_scale" :value="gradeObj.point">{{ gradeObj.grade }}</option>
     </select>
   </div>
 </template>
