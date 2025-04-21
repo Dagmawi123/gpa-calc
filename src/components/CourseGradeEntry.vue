@@ -22,13 +22,13 @@ watch(grade, (newValue) => {
 </script>
 <template>
   <div class="course">
-    <select v-model="credit" class="course-input" name="" id="">
+    <select v-model="credit" class="course-input" name="course-input" id="course-input">
       <option v-for=" course in courses" :key="course.name" :value="course.credits" >
         {{ course.name }}
       </option>
     </select>
 
-    <select v-model="grade" class="grade-select" name="" id="">
+    <select v-model="grade" class="grade-select" name="grade-input" id="grade-input">
       <option v-for="gradeObj in grading_scale" :value="gradeObj.point">{{ gradeObj.grade }}</option>
     </select>
   </div>
