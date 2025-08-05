@@ -6,29 +6,34 @@ const grading_scale = [...CoursesFile.grading_scale]; // Create new array
 
 // console.log(courses[0].credits);
 const props = defineProps({
-  initialCredit: { type: Number, default: 5 },
-  initialGrade: { type: Number, default: 4 }
+ course: {
+   type: Object,
+   required: true
+ },
 });
-const grade = ref(props.initialGrade);
-const credit = ref(props.initialCredit);
-const emit = defineEmits(['creditChanged', 'gradeChanged']);
-watch(credit, (newValue) => {
-  emit('creditChanged', newValue);
-})
-watch(grade, (newValue) => {
-  emit('gradeChanged', newValue);
-})
-
+const grade = ref(props.course.grade);
+const courseCode = ref(props.course.courseCode);
+const emit = defineEmits(['update']); 
+watch(courseCode, (newCourseCode) => {
+  console.log("Prompted with this courseCode change: ", newCourseCode);
+  emit('update', props.course.id, 'courseCode', newCourseCode);
+  // emit('update', props.course.id, 'grade', newGrade);
+});
+watch(grade, (newGrade) => {
+  console.log("Prompted with this grade change: ", newGrade);
+  emit('update', props.course.id, 'grade', newGrade);
+  // emit('update', props.course.id, 'grade', newGrade);
+});
 </script>
 <template>
   <div class="course">
-    <select v-model="credit" class="course-input" name="course-input" id="course-input">
-      <option v-for=" course in courses" :key="course.name" :value="course.credits" >
-        {{ course.name }}
+    <select v-model="courseCode" class="course-input" id="course-input" >
+      <option v-for=" courseObj in courses" :key="courseObj.name" :value="courseObj.courseCode" >
+        {{ courseObj.name }}
       </option>
     </select>
 
-    <select v-model="grade" class="grade-select" name="grade-input" id="grade-input">
+    <select v-model="grade" class="grade-select" id="grade-input">
       <option v-for="gradeObj in grading_scale" :value="gradeObj.point">{{ gradeObj.grade }}</option>
     </select>
   </div>

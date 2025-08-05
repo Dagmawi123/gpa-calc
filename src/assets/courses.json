@@ -1,149 +1,52 @@
 {
   "courses": [
-    {
-      "name": "Computer Programming I",
-      "credits": 5
-    },
-    {
-      "name": "Computer Programming II",
-      "credits": 5
-    },
-    {
-      "name": "Data Structures and Algorithm Analysis",
-      "credits": 5
-    },
-    {
-      "name": "Introduction to Emerging Technologies",
-      "credits": 4
-    },
-    {
-      "name": "ICT Fundamentals",
-      "credits": 5
-    },
-    {
-      "name": "Object Oriented Programming",
-      "credits": 5
-    },
-    {
-      "name": "Windows Programming",
-      "credits": 5
-    },
-    {
-      "name": "Introduction to UNIX",
-      "credits": 5
-    },
-    {
-      "name": "Logic Design",
-      "credits": 4
-    },
-    {
-      "name": "DataBase Management Systems",
-      "credits": 5
-    },
-    {
-      "name": "Database Programming & Admin",
-      "credits": 4
-    },
-    {
-      "name": "Computer Organization & Assembly Language Programming",
-      "credits": 4
-    },
-    {
-      "name": "Web Design & Development I",
-      "credits": 5
-    },
-    {
-      "name": "Web Design & Development II",
-      "credits": 4
-    },
-    {
-      "name": "Systems Analysis & Design",
-      "credits": 4
-    },
-    {
-      "name": "Operating Systems",
-      "credits": 4
-    },
-    {
-      "name": "Focusing Areas on ICT",
-      "credits": 2
-    },
-    {
-      "name": "Object Oriented Software Engineering",
-      "credits": 4
-    },
-    {
-      "name": "Computer Networks",
-      "credits": 5
-    },
-    {
-      "name": "Network Adminstration",
-      "credits": 4
-    },
-    {
-      "name": "Compiler Design",
-      "credits": 4
-    },
-    {
-      "name": "Data Mining",
-      "credits": 4
-    },
-    {
-      "name": "Computer Systems Security",
-      "credits": 5
-    },
-    {
-      "name": "Artificial Intelligence",
-      "credits": 4
-    },
-    {
-      "name": "Geographic Information Systems",
-      "credits": 5
-    },
-    {
-      "name": "Computer Graphics",
-      "credits": 4
-    },
-    {
-      "name": "UNIX Systems Administration",
-      "credits": 5
-    },
-    {
-      "name": "Mobile Application",
-      "credits": 4
-    },
-    {
-      "name": "Information Retrieval",
-      "credits": 4
-    },
-    {
-      "name": "Software Testing",
-      "credits": 4
-    },
-    {
-      "name": "IT Research Methods",
-      "credits": 4
-    },
-    {
-      "name": "IT Project Management",
-      "credits": 4
-    },
-
-    { "name": "Logic and Critical Thinking", "credits": 4 },
-    { "name": "General Psychology", "credits": 4 },
-    { "name": "Social Anthropology", "credits": 3 },
-    { "name": "Moral and Civics Education", "credits": 3 },
-    { "name": "Geography of Ethiopia and the Horn", "credits": 4 },
-    { "name": "History of Ethiopia and the Horn", "credits": 4 },
-    { "name": "Mathematics for Natural Sciences", "credits": 4 },
-    { "name": "General Physics", "credits": 4 },
-    { "name": "Communicative English Language Skills I", "credits": 4 },
-    { "name": "Communicative English Language Skills II", "credits": 4 },
-    { "name": "Inclusiveness", "credits": 3 },
-    { "name": "Global Trends", "credits": 3 },
-    { "name": "Statistics & Probability", "credits": 4 },
-    { "name": "Economics", "credits": 4 },
-    { "name": "Entrepreneurship", "credits": 4 }
+    { "courseCode": "CS000", "name": "Computer Programming I", "credits": 5 },
+    { "courseCode": "CS001", "name": "Computer Programming II", "credits": 5 },
+    { "courseCode": "CS002", "name": "Data Structures and Algorithm Analysis", "credits": 5 },
+    { "courseCode": "CS003", "name": "ICT Fundamentals", "credits": 5 },
+    { "courseCode": "CS004", "name": "Object Oriented Programming", "credits": 5 },
+    { "courseCode": "CS005", "name": "Windows Programming", "credits": 5 },
+    { "courseCode": "CS006", "name": "Introduction to UNIX", "credits": 3 },
+    { "courseCode": "CS007", "name": "Introduction to Emerging Technologies", "credits": 4 },
+    { "courseCode": "CS008", "name": "Logic Design", "credits": 4 },
+    { "courseCode": "CS009", "name": "DataBase Management Systems", "credits": 5 },
+    { "courseCode": "CS010", "name": "Database Programming & Admin", "credits": 4 },
+    { "courseCode": "CS011", "name": "Computer Organization & Assembly Language Programming", "credits": 4 },
+    { "courseCode": "CS012", "name": "Web Design & Development I", "credits": 5 },
+    { "courseCode": "CS013", "name": "Web Design & Development II", "credits": 4 },
+    { "courseCode": "CS014", "name": "Systems Analysis & Design", "credits": 4 },
+    { "courseCode": "CS015", "name": "Operating Systems", "credits": 4 },
+    { "courseCode": "CS016", "name": "Focusing Areas on ICT", "credits": 2 },
+    { "courseCode": "CS017", "name": "Object Oriented Software Engineering", "credits": 4 },
+    { "courseCode": "CS018", "name": "Computer Networks", "credits": 5 },
+    { "courseCode": "CS019", "name": "Network Adminstration", "credits": 4 },
+    { "courseCode": "CS020", "name": "Compiler Design", "credits": 4 },
+    { "courseCode": "CS021", "name": "Data Mining", "credits": 4 },
+    { "courseCode": "CS022", "name": "Computer Systems Security", "credits": 5 },
+    { "courseCode": "CS023", "name": "Artificial Intelligence", "credits": 4 },
+    { "courseCode": "CS024", "name": "Geographic Information Systems", "credits": 5 },
+    { "courseCode": "CS025", "name": "Computer Graphics", "credits": 4 },
+    { "courseCode": "CS026", "name": "UNIX Systems Administration", "credits": 5 },
+    { "courseCode": "CS027", "name": "Mobile Application", "credits": 4 },
+    { "courseCode": "CS028", "name": "Information Retrieval", "credits": 4 },
+    { "courseCode": "CS029", "name": "Software Testing", "credits": 4 },
+    { "courseCode": "CS030", "name": "IT Research Methods", "credits": 4 },
+    { "courseCode": "CS031", "name": "IT Project Management", "credits": 4 },
+    { "courseCode": "GE001", "name": "Logic and Critical Thinking", "credits": 4 },
+    { "courseCode": "GE002", "name": "General Psychology", "credits": 4 },
+    { "courseCode": "GE003", "name": "Social Anthropology", "credits": 3 },
+    { "courseCode": "GE004", "name": "Moral and Civics Education", "credits": 3 },
+    { "courseCode": "GE005", "name": "Geography of Ethiopia and the Horn", "credits": 4 },
+    { "courseCode": "GE006", "name": "History of Ethiopia and the Horn", "credits": 4 },
+    { "courseCode": "GE007", "name": "Mathematics for Natural Sciences", "credits": 4 },
+    { "courseCode": "GE008", "name": "General Physics", "credits": 4 },
+    { "courseCode": "GE009", "name": "Communicative English Language Skills I", "credits": 4 },
+    { "courseCode": "GE010", "name": "Communicative English Language Skills II", "credits": 4 },
+    { "courseCode": "GE011", "name": "Inclusiveness", "credits": 3 },
+    { "courseCode": "GE012", "name": "Global Trends", "credits": 3 },
+    { "courseCode": "GE013", "name": "Statistics & Probability", "credits": 4 },
+    { "courseCode": "GE014", "name": "Economics", "credits": 4 },
+    { "courseCode": "GE015", "name": "Entrepreneurship", "credits": 4 }
   ],
   "grading_scale": [
     {
@@ -179,4 +82,4 @@
       "point": 0
     }
   ]
-}
+  } 

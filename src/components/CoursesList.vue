@@ -1,11 +1,14 @@
 <script setup>
 import CourseGradeEntry from './CourseGradeEntry.vue';
 import { ref } from 'vue';
-const yourCourses = ref([{ 'id': 1,'credit':5,'grade':4 }]);
+import CoursesFile from '../assets/courses.json';
+
+const courses = [...CoursesFile.courses]; // Create new array
+const yourCourses = ref([{ 'id': Date.now(),'courseCode':"CS000",'credit':5,'grade':4 }]);
 
 
 function addEntry(){ 
-    yourCourses.value.push({ 'id': yourCourses.value.length + 1 ,'credit':5,'grade':4 });
+    yourCourses.value.push({ 'id': Date.now(),'courseCode':"CS000",'credit':5,'grade':4 });
 }
 function calculateGPA() {  
     console.log("Current state of yourCourses: ", yourCourses.value);
@@ -23,16 +26,22 @@ function calculateGPA() {
     // console.log("GPA: ",gpa);
     return gpa;
 }
+function updateCourse(id,field,value) { 
+   const crs =yourCourses.value.find((course) => course.id === id)
+   if(field=="courseCode"){ 
+    crs.courseCode = value;
+    crs.credit=courses.find((course) => course.courseCode === value)?.credits || 0;  
+    } else if(field=="grade"){
+        crs.grade = value; 
+   } 
+ }
 defineExpose({calculateGPA});
  
 </script>
 <template>
     <div class="container">
-        <div class="entries">
-            <div v-for="(entry,index) in yourCourses" :key="entry.id">
-                <CourseGradeEntry :initial-credit=5 :initial-grade=4   @gradeChanged="(value)=>{yourCourses[index].grade=value}" 
-                    @creditChanged="(value)=>{yourCourses[index].credit=value}" />
-            </div>
+        <div class="entries"> 
+                <CourseGradeEntry v-for="cors in yourCourses" @update="updateCourse" :course="cors" :key="cors.id" /> 
         </div>
         <div class="add">
             <button @click="addEntry">Add Course</button>
