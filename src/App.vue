@@ -24,7 +24,7 @@ gpa.value=courseListRef.value?.calculateGPA();
 <style scoped>
 .container h2 {
   text-align: center;
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 800;
   font-family: 'Frutiger LT Std', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
