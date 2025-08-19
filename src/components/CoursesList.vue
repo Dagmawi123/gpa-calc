@@ -4,15 +4,15 @@ import CourseGradeEntry from './CourseGradeEntry.vue';
 
 // const courses = [...CoursesFile.courses]; // Create new array
 // const yourCourses = ref([{ 'id': Date.now(),'courseCode':"CS000",'credit':5,'grade':4 }]);
-const {yourCourses} = useCourseStore(); 
+const {yourCourses,addEntry} = useCourseStore(); 
 </script>
 <template>
-    <div class="container">
+    <div class="container"> 
         <div class="entries"> 
                 <CourseGradeEntry v-for="cors in yourCourses" :course="cors" :key="cors.id" /> 
         </div>
         <div class="add">
-            <button @click="courseStore.addEntry">Add Course</button>
+            <button @click="addEntry">Add Course</button>
         </div>
     </div>
 </template>
