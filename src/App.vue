@@ -4,20 +4,17 @@ import CalcButton from './components/CalcBtn.vue';
 import GPAResult from './components/GPADisplay.vue';
 import {ref} from 'vue';
 const courseListRef = ref(null);
-const gpa=ref(0.0);
-function calculate() { 
-gpa.value=courseListRef.value?.calculateGPA();
-}
+
 </script>
 <template>
   <div class="container">
     <h2> <span>HiLCoE</span> GPA Calculator</h2>
     <main>
-      <CoursesList ref="courseListRef" />
+      <CoursesList/>
     </main>
     <section class="display">
-      <CalcButton @click="calculate" />
-      <GPAResult :gpa="gpa.toString().substring(0,4)" />
+      <CalcButton/>
+      <GPAResult />
     </section>
   </div>
 </template>

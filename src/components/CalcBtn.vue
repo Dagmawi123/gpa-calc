@@ -1,9 +1,12 @@
 <script setup> 
-var emit=defineEmits(['click']);
+import { useCourseStore } from '@/stores/courseStore';
+// import { c } from 'vite/dist/node/moduleRunnerTransport.d-CXw_Ws6P';
+const courseStore = useCourseStore();
+// var emit=defineEmits(['click']);
 </script>
 
 <template>
-    <button class="calc-btn" @click="$emit('click')">
+    <button class="calc-btn" @click="courseStore.calculateGPA">
         Calculate GPA
     </button>
 </template>

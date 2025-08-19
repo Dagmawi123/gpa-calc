@@ -1,13 +1,16 @@
 <script setup>
-var props=defineProps({
-    gpa:{ type:String,
-    required: true
-}});
+// var props=defineProps({
+//     gpa:{ type:String,
+//     required: true
+// }});
+import { useCourseStore } from '@/stores/courseStore';
+const courseStore = useCourseStore();
+
 </script>
 
 <template>
     <div class="gpa-display">
-        <h2>Your GPA is: <span> {{props.gpa}}</span></h2>
+        <h2>Your GPA is: <span> {{courseStore.gpa}}</span></h2>
     </div>
 </template>
 <style scoped

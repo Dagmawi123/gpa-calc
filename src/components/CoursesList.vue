@@ -1,50 +1,18 @@
 <script setup>
 import CourseGradeEntry from './CourseGradeEntry.vue';
-import { ref } from 'vue';
-import CoursesFile from '../assets/courses.json';
+ import {useCourseStore} from '../stores/courseStore.js';
 
-const courses = [...CoursesFile.courses]; // Create new array
-const yourCourses = ref([{ 'id': Date.now(),'courseCode':"CS000",'credit':5,'grade':4 }]);
-
-
-function addEntry(){ 
-    yourCourses.value.push({ 'id': Date.now(),'courseCode':"CS000",'credit':5,'grade':4 });
-}
-function calculateGPA() {  
-    console.log("Current state of yourCourses: ", yourCourses.value);
-    var totalCreditHours=0;
-    var summationOfGradeWithCredit=0.0;
-    yourCourses.value.forEach(element => {
-        totalCreditHours+=element.credit;
-    });
-    yourCourses.value.forEach(element => { 
-        summationOfGradeWithCredit+=element.grade*element.credit;
-    });
-    console.log("Total Credit Hours: ",totalCreditHours);
-    console.log("Summation of Grade with Credit: ",summationOfGradeWithCredit);
-    var gpa=summationOfGradeWithCredit/totalCreditHours;
-    // console.log("GPA: ",gpa);
-    return gpa;
-}
-function updateCourse(id,field,value) { 
-   const crs =yourCourses.value.find((course) => course.id === id)
-   if(field=="courseCode"){ 
-    crs.courseCode = value;
-    crs.credit=courses.find((course) => course.courseCode === value)?.credits || 0;  
-    } else if(field=="grade"){
-        crs.grade = value; 
-   } 
- }
-defineExpose({calculateGPA});
- 
+// const courses = [...CoursesFile.courses]; // Create new array
+// const yourCourses = ref([{ 'id': Date.now(),'courseCode':"CS000",'credit':5,'grade':4 }]);
+const {yourCourses} = useCourseStore(); 
 </script>
 <template>
     <div class="container">
         <div class="entries"> 
-                <CourseGradeEntry v-for="cors in yourCourses" @update="updateCourse" :course="cors" :key="cors.id" /> 
+                <CourseGradeEntry v-for="cors in yourCourses" :course="cors" :key="cors.id" /> 
         </div>
         <div class="add">
-            <button @click="addEntry">Add Course</button>
+            <button @click="courseStore.addEntry">Add Course</button>
         </div>
     </div>
 </template>

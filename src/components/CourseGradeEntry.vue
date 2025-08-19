@@ -1,8 +1,7 @@
-<script setup>
-import CoursesFile from '../assets/courses.json';
+<script setup> 
 import { ref, watch } from 'vue'; 
-const courses = [...CoursesFile.courses]; // Create new array
-const grading_scale = [...CoursesFile.grading_scale]; // Create new array
+import { useCourseStore } from '@/stores/courseStore';
+const {updateCourse,courses,grading_scale} =useCourseStore() // Create new array
 
 // console.log(courses[0].credits);
 const props = defineProps({
@@ -13,15 +12,17 @@ const props = defineProps({
 });
 const grade = ref(props.course.grade);
 const courseCode = ref(props.course.courseCode);
-const emit = defineEmits(['update']); 
+// const emit = defineEmits(['update']); 
 watch(courseCode, (newCourseCode) => {
   console.log("Prompted with this courseCode change: ", newCourseCode);
-  emit('update', props.course.id, 'courseCode', newCourseCode);
+  updateCourse(props.course.id, 'courseCode', newCourseCode);
+  // emit('update', props.course.id, 'courseCode', newCourseCode);
   // emit('update', props.course.id, 'grade', newGrade);
 });
 watch(grade, (newGrade) => {
   console.log("Prompted with this grade change: ", newGrade);
-  emit('update', props.course.id, 'grade', newGrade);
+  updateCourse(props.course.id, 'grade', newGrade);
+  // emit('update', props.course.id, 'grade', newGrade);
   // emit('update', props.course.id, 'grade', newGrade);
 });
 </script>
