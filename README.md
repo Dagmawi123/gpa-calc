@@ -1,10 +1,6 @@
-# gpa-calc
+# gpa-calc - A simple GPA calculator for HiLCoE School of Computer Science and Technology
+  <img width="609" height="529" alt="image" src="https://github.com/user-attachments/assets/597607ca-438c-4b23-8267-79588d1a5436" />
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
 ## Customize configuration
 
