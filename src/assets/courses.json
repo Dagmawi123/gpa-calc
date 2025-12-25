@@ -46,7 +46,8 @@
     { "courseCode": "GE012", "name": "Global Trends", "credits": 3 },
     { "courseCode": "GE013", "name": "Statistics & Probability", "credits": 4 },
     { "courseCode": "GE014", "name": "Economics", "credits": 4 },
-    { "courseCode": "GE015", "name": "Entrepreneurship", "credits": 4 }
+    { "courseCode": "GE015", "name": "Entrepreneurship", "credits": 4 },
+    { "courseCode": "GE016", "name": "Senior Project", "credits": 6 }
   ],
   "grading_scale": [
     {
